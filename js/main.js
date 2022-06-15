@@ -1,0 +1,135 @@
+"use strict";
+import "./settingModule.js";
+// ============================= SELECT ELEMENTS
+let landingPage = document.getElementById("landingArea"); // landing Page
+const navLinks = document.querySelectorAll("header .links .nav-link"); //nav links
+const sectionSkils = document.getElementById("skils"); // section skils
+const progresPars = document.querySelectorAll(".progress .progress-par");
+const gallaryImages = Array.from(document.querySelectorAll(".our-area img")); // all images
+const lightBox = document.querySelector(".our-gallary .light-box"); // light box
+const boxImg = document.querySelector(".our-gallary .box-img"); //  box img
+const close = document.querySelector(".our-gallary .light-box .close"); //close box
+const preve = document.querySelector(".our-gallary .light-box .preve"); //preve box
+const next = document.querySelector(".our-gallary .light-box .next"); //next box
+const navBullets = document.querySelectorAll(".nav-bullets .bullet");
+// ============================= GLOBAL
+const imagesArray = [
+   // images pathes
+   "landing-1",
+   "landing-2",
+   "landing-3",
+   "landing-4",
+   "landing-5",
+];
+let startCount = false; // skils when scroll
+let curentIndexImg = 0; // index image gallary
+// ============================= FUNCTIONS
+// ---- change images landing page
+export function changeImage() {
+   let randomNum = Math.floor(Math.random() * imagesArray.length);
+   landingPage.style.backgroundImage = ` url(images/${imagesArray[randomNum]}.jpg)`;
+}
+// --- change Active
+export function changeActive(items, elemnt) {
+   items.forEach((item) => item.classList.remove("active")); // items loop to remove active
+   elemnt.classList.add("active"); // element to add active
+}
+// --- count skils
+let startCountSkil = (item) => {
+   let prog = item.dataset.prog;
+   let num = item.dataset.num;
+   let count = setInterval(() => {
+      item.style.width = num++ + "%";
+      item.dataset.num++;
+      if (num == prog) {
+         clearInterval(count);
+      }
+   }, 15);
+};
+// --- show light box
+let showLightBox = (curentSrc) => {
+   boxImg.style.backgroundImage = `url(${curentSrc})`;
+   lightBox.style.display = "flex";
+};
+// --- close light box
+let closeLigthBox = () => {
+   lightBox.style.display = "none";
+};
+// --- next gallary
+let nextGallary = () => {
+   curentIndexImg++;
+   if (curentIndexImg == gallaryImages.length) {
+      curentIndexImg = 0;
+   }
+   let curentSrc = gallaryImages[curentIndexImg].src;
+   boxImg.style.backgroundImage = `url(${curentSrc})`;
+};
+// --- prev gallary
+let preveGallary = () => {
+   curentIndexImg--;
+   if (curentIndexImg < 0) {
+      curentIndexImg = gallaryImages.length - 1;
+   }
+   let curentSrc = gallaryImages[curentIndexImg].src;
+   boxImg.style.backgroundImage = `url(${curentSrc})`;
+};
+// --- scroll behavir
+function scrollBehavir(elements) {
+   elements.forEach((elm) => {
+      elm.addEventListener("cick", (e) => {
+         document.querySelector(e.target.dataset.section).scrollIntoView({
+            behavior: "smooth",
+         });
+      });
+   });
+}
+// ============================= EVENTS
+// ---- nav change active
+navLinks.forEach((link) => {
+   link.addEventListener("click", () => {
+      changeActive(navLinks, link);
+   });
+});
+// ---- skils when skroll
+addEventListener("scroll", () => {
+   if (scrollY >= sectionSkils.offsetTop - 200) {
+      if (!startCount) {
+         progresPars.forEach((item) => startCountSkil(item));
+      }
+      startCount = true;
+   }
+});
+// --- images open light
+gallaryImages.forEach((image) => {
+   image.addEventListener("click", (e) => {
+      curentIndexImg = gallaryImages.indexOf(e.target);
+      let curentSrc = e.target.src;
+      showLightBox(curentSrc);
+   });
+});
+// --- close light box
+close.addEventListener("click", () => {
+   closeLigthBox();
+});
+// --- next image
+next.addEventListener("click", () => {
+   nextGallary();
+});
+// --- preve image
+preve.addEventListener("click", () => {
+   preveGallary();
+});
+// --- key down for gallary
+document.addEventListener("keydown", (e) => {
+   if (e.key == "Escape") {
+      closeLigthBox();
+   } else if (e.key == "ArrowLeft") {
+      preveGallary();
+   } else if (e.key == "ArrowRight") {
+      nextGallary();
+   }
+});
+// --- navBullets scroll behavir
+scrollBehavir(navBullets);
+// --- navbar scroll click behavir
+scrollBehavir(navLinks);
