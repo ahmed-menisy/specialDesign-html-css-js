@@ -83,6 +83,12 @@ function scrollBehavir(elements) {
       });
    });
 }
+// --- nav bullets set active in nav
+// function switchActiveNavBull () {
+//    navBullets.forEach(nav=> {
+
+//    })
+// }
 // ============================= EVENTS
 // ---- nav change active
 navLinks.forEach((link) => {
@@ -133,3 +139,16 @@ document.addEventListener("keydown", (e) => {
 scrollBehavir(navBullets);
 // --- navbar scroll click behavir
 scrollBehavir(navLinks);
+// --- nav bullets set active in nav
+navBullets.forEach((nav) => {
+   nav.addEventListener("click", (e) => {
+      navLinks.forEach((link) => {
+         link.classList.remove("active");
+      });
+      navLinks.forEach((link) => {
+         if (e.target.dataset.section == link.dataset.section) {
+            link.classList.add("active");
+         }
+      });
+   });
+});
