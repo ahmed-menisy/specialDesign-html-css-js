@@ -4,6 +4,7 @@ import "./settingModule.js";
 let landingPage = document.getElementById("landingArea"); // landing Page
 const navLinks = document.querySelectorAll("header .links .nav-link"); //nav links
 const sectionSkils = document.getElementById("skils"); // section skils
+const allSections = document.querySelectorAll("section"); // section  all
 const progresPars = document.querySelectorAll(".progress .progress-par");
 const gallaryImages = Array.from(document.querySelectorAll(".our-area img")); // all images
 const lightBox = document.querySelector(".our-gallary .light-box"); // light box
@@ -83,12 +84,6 @@ function scrollBehavir(elements) {
       });
    });
 }
-// --- nav bullets set active in nav
-// function switchActiveNavBull () {
-//    navBullets.forEach(nav=> {
-
-//    })
-// }
 // ============================= EVENTS
 // ---- nav change active
 navLinks.forEach((link) => {
@@ -152,3 +147,11 @@ navBullets.forEach((nav) => {
       });
    });
 });
+// --- all section move
+// addEventListener("scroll", () => {
+//    allSections.forEach((section) => {
+//       if(scrollY <= section.offsetTop -200 ) {
+//          console.log('y');
+//       }
+//    });
+// });
