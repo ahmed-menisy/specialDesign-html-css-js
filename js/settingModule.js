@@ -27,9 +27,11 @@ let backgroundInterval; // background random
    // background check random or no
    if (getStorage("background check") != null) {
       if (getStorage("background check") == "true") {
+        document.querySelector('.choose-background').style.display = `flex`;
          backgroundCheck = true;
       } else {
          backgroundCheck = false;
+        document.querySelector('.choose-background').style.display = `none`;
       }
       changeActive(
          backgroundOption,
@@ -165,9 +167,11 @@ backgroundOption.forEach((backgroundItem) => {
             backgroundCheck = true;
             switchBackground();
          }
+        document.querySelector('.choose-background').style.display = `flex`;
       } else {
          backgroundCheck = false;
          clearInterval(backgroundInterval);
+         document.querySelector('.choose-background').style.display = `none`;
       }
       setStorage("background check", backgroundCheck);
    });
@@ -178,6 +182,7 @@ backgrounds.forEach((background) => {
       setBackGround(e.target.src);
    });
 });
+// --- hide background if randon no
 // --- Switch nav option
 navOption.forEach((nav) => {
    nav.addEventListener("click", (e) => {

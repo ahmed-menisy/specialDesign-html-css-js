@@ -151,6 +151,12 @@ addEventListener("scroll", () => {
          link.classList.add("active");
       }
    });
+   navBullets.forEach((bullet) => {
+      bullet.classList.remove("active");
+      if (bullet.href.includes(curentSection)) {
+         bullet.classList.add("active");
+      }
+   });
 });
 // --- navbar show
 menuBtn.onclick = function () {
