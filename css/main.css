@@ -53,7 +53,7 @@ html {
    background-color: var(--main-color);
 }
 :root {
-   --container-xl: 1320px;
+   --container-xxl: 1320px;
    --container-xl: 1140px;
    --container-lg: 960px;
    --container-md: 720px;
@@ -76,7 +76,7 @@ a {
 p {
    line-height: 1.7;
 }
-section {
+section:not(:first-of-type) {
    padding: 5rem 0;
 }
 img {
@@ -101,6 +101,9 @@ img {
    top: 50%;
    transform: translate(-50%, -50%);
    color: rgba(0, 0, 0, 0.1);
+}
+/* ============================== fixed bar ============================== */
+.bar {
 }
 /* ============================== Setings ============================== */
 .settings-box {
@@ -305,7 +308,7 @@ header.landing-area .layer {
 }
 /* ---------- nav link ---------- */
 header.landing-area .logo {
-   font-size: 1.4rem;
+   font-size: 1.4em;
    font-weight: 700;
    color: var(--main-color);
    text-transform: uppercase;
@@ -317,6 +320,7 @@ header.landing-area nav.nav-link {
    align-items: center;
    justify-content: space-between;
    position: relative;
+   white-space: nowrap;
 }
 header.landing-area nav.nav-link.fixed {
    position: fixed;
@@ -334,9 +338,9 @@ header.landing-area .nav-link ul.links a {
    display: flex;
    align-items: center;
    color: #fff;
-   padding: 0 1rem;
-   margin: 0 0.2rem;
-   font-size: 0.75rem;
+   padding: 0 1em;
+   margin: 0 0.2em;
+   font-size: 0.75em;
    font-weight: 700;
    height: 70px;
    text-transform: uppercase;

@@ -24,6 +24,7 @@ const imagesArray = [
 ];
 let startCount = false; // skils when scroll
 let curentIndexImg = 0; // index image gallary
+let curentSection; // curent section using in scroll
 // ============================= FUNCTIONS
 // ---- change images landing page
 export function changeImage() {
@@ -86,11 +87,11 @@ function scrollBehavir(elements) {
 }
 // ============================= EVENTS
 // ---- nav change active
-navLinks.forEach((link) => {
-   link.addEventListener("click", () => {
-      changeActive(navLinks, link);
-   });
-});
+// navLinks.forEach((link) => {
+//    link.addEventListener("click", () => {
+//       changeActive(navLinks, link);
+//    });
+// });
 // ---- skils when skroll
 addEventListener("scroll", () => {
    if (scrollY >= sectionSkils.offsetTop - 200) {
@@ -135,23 +136,29 @@ scrollBehavir(navBullets);
 // --- navbar scroll click behavir
 scrollBehavir(navLinks);
 // --- nav bullets set active in nav
-navBullets.forEach((nav) => {
-   nav.addEventListener("click", (e) => {
-      navLinks.forEach((link) => {
-         link.classList.remove("active");
-      });
-      navLinks.forEach((link) => {
-         if (e.target.dataset.section == link.dataset.section) {
-            link.classList.add("active");
-         }
-      });
-   });
-});
-// --- all section move
-// addEventListener("scroll", () => {
-//    allSections.forEach((section) => {
-//       if(scrollY <= section.offsetTop -200 ) {
-//          console.log('y');
-//       }
+// navBullets.forEach((nav) => {
+//    nav.addEventListener("click", (e) => {
+//       navLinks.forEach((link) => {
+//          link.classList.remove("active");
+//       });
+//       navLinks.forEach((link) => {
+//          if (e.target.dataset.section == link.dataset.section) {
+//             link.classList.add("active");
+//          }
+//       });
 //    });
 // });
+// --- change nav link when scroll
+addEventListener("scroll", () => {
+   allSections.forEach((section) => {
+      if (scrollY >= section.offsetTop - 100) {
+         curentSection = section.getAttribute("id");
+      }
+   });
+   navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.href.includes(curentSection)) {
+         link.classList.add("active");
+      }
+   });
+});
