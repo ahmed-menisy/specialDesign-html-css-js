@@ -789,6 +789,17 @@ header.landing-area .landing-info p {
    background-color: #fff;
    transition: var(--transition);
 }
+/* ============================== FOOTER ============================== */
+footer {
+   text-align: center;
+   background-color: var(--main-color);
+   overflow: hidden;
+   color: #333;
+}
+footer span {
+   color: #fff;
+}
+/* ============================== MEDIA ============================== */
 @media screen and (max-width: 1199.98px) {
    nav {
       font-size: 14px;
