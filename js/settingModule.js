@@ -8,7 +8,7 @@ const backgroundOption = Array.from(
    document.querySelectorAll(".background-option span")
 ); // background option
 const backgrounds = Array.from(document.querySelectorAll(".choose-background")); // select backgrounds images
-let landingPage = document.getElementById("landingArea"); // landing Page
+let landingPage = document.getElementById("landingAreaPage"); // landing Page
 const navOption = Array.from(document.querySelectorAll(".nav-option span")); // nav option yes or no
 const navBulletsOpt = Array.from(document.querySelectorAll(".nav-bull span")); // nav bullets yes or no
 const navBar = document.getElementById("navBar"); // nav bar

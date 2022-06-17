@@ -291,6 +291,7 @@ hr {
    border-color: transparent transparent transparent var(--main-color);
 }
 /* ============================== Landing ============================== */
+
 header.landing-area {
    background-image: url(../images/landing-1.jpg);
    background-size: cover;
@@ -362,7 +363,6 @@ header.landing-area .nav-link ul.links a::before {
    background-color: var(--main-color);
    transition: var(--transition);
 }
-
 header.landing-area .nav-link ul.links a.active::before {
    width: 100%;
 }
@@ -767,8 +767,6 @@ header.landing-area .landing-info p {
    width: 100%;
    height: 100%;
    resize: vertical;
-}
-.contact form textarea {
 }
 .contact form :is(input, textarea):focus::placeholder {
    opacity: 0;
