@@ -76,7 +76,7 @@ a {
 p {
    line-height: 1.7;
 }
-section:not(:first-of-type) {
+section:not(header section) {
    padding: 5rem 0;
 }
 img {

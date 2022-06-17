@@ -1,7 +1,7 @@
 "use strict";
 import "./settingModule.js";
 // ============================= SELECT ELEMENTS
-let landingPage = document.getElementById("landingArea"); // landing Page
+let landingPage = document.getElementById("landingAreaPage"); // landing Page
 const navLinks = document.querySelectorAll("header .links .nav-link"); //nav links
 const sectionSkils = document.getElementById("skils"); // section skils
 const allSections = document.querySelectorAll("section"); // section  all
