@@ -14,6 +14,7 @@ body {
 .container {
    width: var(--container-fluid);
    margin: 0 auto;
+   padding: 0 10px;
 }
 @media (min-width: 576px) {
    .container {
@@ -244,7 +245,7 @@ hr {
    top: 50%;
    right: 20px;
    transform: translateY(-50%);
-   z-index: 777;
+   z-index: 9999;
    display: block;
 }
 .nav-bullets .bullet {
@@ -788,69 +789,83 @@ header.landing-area .landing-info p {
    background-color: #fff;
    transition: var(--transition);
 }
-@media screen and (max-width:1199.98px){
+@media screen and (max-width: 1199.98px) {
    nav {
       font-size: 14px;
    }
 }
-@media screen and (max-width:991.98px){
-   header.landing-area nav.nav-link.fixed  {
+@media screen and (max-width: 991.98px) {
+   header.landing-area nav.nav-link {
+      position: relative;
+      z-index: 999;
+   }
+   header.landing-area .nav-link ul.links li a {
+      color: #000;
+   }
+   header.landing-area nav.nav-link.fixed {
       background-color: transparent;
-   box-shadow: unset;
+      box-shadow: unset;
    }
    nav .icon-menu {
       display: block;
    }
    header.landing-area .nav-link ul.links {
       position: absolute;
-      top: 40px;
+      top: 20px;
       right: 60px;
       flex-direction: column;
       width: 220px;
       padding-left: 0;
+      display: none;
+   }
+   .show-nav {
+      display: flex !important;
    }
    header.landing-area .nav-link ul.links li {
       width: 100%;
-      animation: move-menu .4s cubic-bezier(.42,.97,.52,1.49) forwards;
+      animation: move-menu 0.4s cubic-bezier(0.42, 0.97, 0.52, 1.49) forwards;
       transform-origin: right top;
       opacity: 0;
    }
-header.landing-area .nav-link  ul.links  li a {
-   justify-content: center;
-   height: 50px;
-   background-color: #fff;
-   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-}
-header.landing-area .nav-link ul.links li:nth-child(2) {
-   animation-delay: .2s;
-}
-header.landing-area .nav-link ul.links li:nth-child(3) {
-   animation-delay: .4s;
-}
-header.landing-area .nav-link ul.links  li:nth-child(4) {
-   animation-delay: .6s;
-}
-header.landing-area .nav-link ul.links li:nth-child(5) {
-   animation-delay: .8s;
-}
-header.landing-area .nav-link ul.links li:nth-child(6) {
-   animation-delay: 1s;
-}
-header.landing-area .nav-link ul.links li:nth-child(7) {
-   animation-delay: 1.2s;
-}
-header.landing-area .nav-link ul.links li:nth-child(8) {
-   animation-delay: 1.4s;
-}
-@keyframes move-menu {
-   from {
-      transform: rotateZ(-90deg) scale(.1);
+   header.landing-area .nav-link ul.links li a {
+      justify-content: center;
+      height: 38px;
+      background-color: #fff;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
    }
-   to {
-      transform: rotateZ(0) scale(1);
-      opacity: 1;
+   header.landing-area .nav-link ul.links li:nth-child(2) {
+      animation-delay: 0.2s;
    }
-}
+   header.landing-area .nav-link ul.links li:nth-child(3) {
+      animation-delay: 0.4s;
+   }
+   header.landing-area .nav-link ul.links li:nth-child(4) {
+      animation-delay: 0.6s;
+   }
+   header.landing-area .nav-link ul.links li:nth-child(5) {
+      animation-delay: 0.8s;
+   }
+   header.landing-area .nav-link ul.links li:nth-child(6) {
+      animation-delay: 1s;
+   }
+   header.landing-area .nav-link ul.links li:nth-child(7) {
+      animation-delay: 1.2s;
+   }
+   header.landing-area .nav-link ul.links li:nth-child(8) {
+      animation-delay: 1.4s;
+   }
+   header.landing-area .landing-info {
+      width: 98%;
+   }
+   @keyframes move-menu {
+      from {
+         transform: rotateZ(-90deg) scale(0.1);
+      }
+      to {
+         transform: rotateZ(0) scale(1);
+         opacity: 1;
+      }
+   }
    nav .icon-menu {
       font-size: 1.8rem;
       cursor: pointer;
@@ -860,29 +875,20 @@ header.landing-area .nav-link ul.links li:nth-child(8) {
       border: 1px solid var(--main-color);
       color: #333;
    }
-   /* header.landing-area nav.nav-link {
-      background-color: transparent !important;
-   box-shadow: unset !important;
-   position: relative !important;
-   padding: 0 !important;
+}
+@media screen and (max-width: 991.98px) {
+   .about-us svg {
+      fill: #eee;
    }
-   header.landing-area .nav-link ul.links a {
-      color: #333 !important;
-      background-color: #fff;
-      width: 200px;
+   .about-us::before {
+      background-color: #eee;
    }
-   nav ul.links {
-      position: absolute;
-      flex-direction: column;
-      top: 40px;
-      right: 0;
+}
+@media screen and (max-width: 576.98px) {
+   * {
+      text-align: center;
    }
-   nav .icon-menu {
-      font-size: 1.8rem;
-      cursor: pointer;
-      display: block;
+   .timeline .timeline-content :is(.left, .right) {
+      width: 100%;
    }
-   nav .icon-menu:active {
-      color: #000;
-   } */
 }

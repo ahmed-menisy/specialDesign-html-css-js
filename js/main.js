@@ -13,6 +13,7 @@ const close = document.querySelector(".our-gallary .light-box .close"); //close 
 const preve = document.querySelector(".our-gallary .light-box .preve"); //preve box
 const next = document.querySelector(".our-gallary .light-box .next"); //next box
 const navBullets = document.querySelectorAll(".nav-bullets .bullet");
+const menuBtn = document.getElementById("menuBtn");
 // ============================= GLOBAL
 const imagesArray = [
    // images pathes
@@ -136,18 +137,6 @@ scrollBehavir(navBullets);
 // --- navbar scroll click behavir
 scrollBehavir(navLinks);
 // --- nav bullets set active in nav
-// navBullets.forEach((nav) => {
-//    nav.addEventListener("click", (e) => {
-//       navLinks.forEach((link) => {
-//          link.classList.remove("active");
-//       });
-//       navLinks.forEach((link) => {
-//          if (e.target.dataset.section == link.dataset.section) {
-//             link.classList.add("active");
-//          }
-//       });
-//    });
-// });
 // --- change nav link when scroll
 addEventListener("scroll", () => {
    allSections.forEach((section) => {
@@ -162,3 +151,7 @@ addEventListener("scroll", () => {
       }
    });
 });
+// --- navbar show
+menuBtn.onclick = function () {
+   document.querySelector(".nav-link ul.links").classList.toggle("show-nav");
+};
