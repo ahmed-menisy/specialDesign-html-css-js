@@ -103,8 +103,6 @@ img {
    color: rgba(0, 0, 0, 0.1);
 }
 /* ============================== fixed bar ============================== */
-.bar {
-}
 /* ============================== Setings ============================== */
 .settings-box {
    position: fixed;
@@ -299,12 +297,14 @@ header.landing-area {
    min-height: 100vh;
    position: relative;
    color: #fff;
+   z-index: 1;
 }
-header.landing-area .layer {
+.layer {
    position: absolute;
    inset: 0;
    background-color: rgba(0, 0, 0, 0.6);
    backdrop-filter: blur(5px);
+   z-index: -1;
 }
 /* ---------- nav link ---------- */
 header.landing-area .logo {
@@ -708,4 +708,83 @@ header.landing-area .landing-info p {
    margin: 0.3rem;
    font-size: 0.7rem;
    font-weight: 700;
+}
+/* ============================== CONTACT ============================== */
+.contact {
+   background-image: url(../images/map.svg);
+   position: relative;
+   z-index: 2;
+}
+.contact .layer {
+   background-color: rgb(249 247 247 / 70%);
+   backdrop-filter: unset;
+}
+.contact form {
+   display: grid;
+   grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+   gap: 20px;
+}
+.contact form :is(.form-left, .form-right) {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+.contact form .form-left {
+   align-self: flex-start;
+}
+.contact form input {
+   height: 40px;
+}
+.contact form button {
+   outline: unset;
+   border: unset;
+   height: 40px;
+   flex-shrink: 0;
+   cursor: pointer;
+   background-color: var(--main-color);
+   color: #fff;
+   font-weight: 700;
+   text-transform: uppercase;
+}
+.contact form button:active {
+   background-image: linear-gradient(
+      to right,
+      rgb(0 0 0 / 0.2),
+      rgb(0 0 0 / 0.2)
+   );
+}
+.contact form .data {
+   position: relative;
+   flex: 1;
+}
+.contact form :is(input, textarea) {
+   outline: unset;
+   border: 1px solid var(--main-color);
+   padding: 10px;
+   caret-color: var(--main-color);
+   font-size: 0.85rem;
+   color: #777;
+   width: 100%;
+   height: 100%;
+   resize: vertical;
+}
+.contact form textarea {
+}
+.contact form :is(input, textarea):focus::placeholder {
+   opacity: 0;
+   transition: var(--transition);
+}
+.contact form label {
+   position: absolute;
+   left: 10px;
+   top: 20px;
+   transform: translateY(-50%);
+   color: #777;
+}
+.contact form :is(input, textarea):focus + label,
+.contact form :is(input, textarea):not(:placeholder-shown) +label {
+   top: 0;
+   font-size: 0.8rem;
+   background-color: #fff;
+   transition: var(--transition);
 }
