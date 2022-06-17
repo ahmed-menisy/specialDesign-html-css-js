@@ -891,4 +891,8 @@ header.landing-area .landing-info p {
    .timeline .timeline-content :is(.left, .right) {
       width: 100%;
    }
+   .timeline .timeline-content :is(.left, .right)::after,
+   .timeline .timeline-content :is(.left, .right)::before {
+      all: unset;
+   }
 }

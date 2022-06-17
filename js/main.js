@@ -3,6 +3,7 @@ import "./settingModule.js";
 // ============================= SELECT ELEMENTS
 let landingPage = document.getElementById("landingAreaPage"); // landing Page
 const navLinks = document.querySelectorAll("header .links .nav-link"); //nav links
+const ulLinks = document.querySelector(".nav-link ul.links"); //ul links
 const sectionSkils = document.getElementById("skils"); // section skils
 const allSections = document.querySelectorAll("section"); // section  all
 const progresPars = document.querySelectorAll(".progress .progress-par");
@@ -153,5 +154,10 @@ addEventListener("scroll", () => {
 });
 // --- navbar show
 menuBtn.onclick = function () {
-   document.querySelector(".nav-link ul.links").classList.toggle("show-nav");
+   ulLinks.classList.toggle("show-nav");
 };
+addEventListener("click", (e) => {
+   if(e.target.parentElement.parentElement != ulLinks && e.target != menuBtn ) {// to check if don't click in ul links or menu button
+   ulLinks.classList.remove("show-nav");
+   }
+});
