@@ -78,7 +78,7 @@ p {
    line-height: 1.7;
 }
 section:not(header section) {
-   padding: 5rem 0;
+   padding: 6rem 0;
 }
 img {
    width: 100%;
@@ -90,8 +90,11 @@ img {
    color: var(--main-color);
    font-size: 2.5rem;
    position: relative;
-   margin-bottom: 5rem;
+   margin-bottom: 6rem;
    z-index: 1;
+}
+.main-title + * {
+   padding-top: 2rem;
 }
 .main-title h2::before {
    content: attr(data-title);
@@ -547,6 +550,9 @@ header.landing-area .landing-info p {
    left: -20px;
 }
 /* ============================== TIME LINE ============================== */
+.timeline {
+   background-color: rgb(0 0 0 / 0.04);
+}
 .timeline .year {
    position: relative;
    margin: 0.7rem auto;
@@ -641,12 +647,18 @@ header.landing-area .landing-info p {
 .feture .feature-content .box {
    text-align: center;
    padding: 1rem;
+   cursor: pointer;
 }
 .feture .feature-content .box img {
    width: 100px;
    border: 4px solid var(--main-color);
    padding: 0.2rem;
    border-radius: 50%;
+   filter: grayscale(1);
+   transition: var(--transition);
+}
+.feture .feature-content .box:hover img {
+   filter: grayscale(0);
 }
 .feture .feature-content .box h3 {
    text-transform: uppercase;
@@ -730,13 +742,13 @@ header.landing-area .landing-info p {
 .contact form :is(.form-left, .form-right) {
    display: flex;
    flex-direction: column;
-   gap: 10px;
+   gap: 20px;
 }
 .contact form .form-left {
    align-self: flex-start;
 }
 .contact form input {
-   height: 40px;
+   height: 55px;
 }
 .contact form button {
    outline: unset;
@@ -768,8 +780,10 @@ header.landing-area .landing-info p {
    font-size: 0.85rem;
    color: #777;
    width: 100%;
-   height: 100%;
    resize: vertical;
+}
+.contact form textarea {
+   height: 100%;
 }
 .contact form :is(input, textarea):focus::placeholder {
    opacity: 0;
@@ -778,7 +792,7 @@ header.landing-area .landing-info p {
 .contact form label {
    position: absolute;
    left: 10px;
-   top: 20px;
+   top: calc(55px / 2);
    transform: translateY(-50%);
    color: #777;
 }
