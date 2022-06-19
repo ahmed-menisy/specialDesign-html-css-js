@@ -533,7 +533,7 @@ header.landing-area .landing-info p {
    width: 80%;
    height: 80%;
    background-image: url(../images/g-1.jpg);
-   background-size: 100%;
+   background-size: 100% 100%;
    background-repeat: no-repeat;
    display: flex;
    align-items: center;
