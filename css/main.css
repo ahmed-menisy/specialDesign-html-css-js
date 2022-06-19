@@ -759,7 +759,7 @@ header.landing-area .landing-info p {
 .contact form button {
    outline: unset;
    border: unset;
-   height: 40px;
+   height: 55px;
    flex-shrink: 0;
    cursor: pointer;
    background-color: var(--main-color);
