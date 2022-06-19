@@ -266,14 +266,11 @@ hr {
    border-radius: 50%;
    border: 2px solid var(--main-color);
    position: relative;
-   outline: 1px solid #333;
-   outline-offset: 1px;
    transition: var(--transition);
 }
 .nav-bullets .bullet:is(:hover, .active) {
    transform: scale(1.5);
    background-color: var(--main-color);
-   outline: transparent;
 }
 .nav-bullets .bullet:hover .tooltip {
    display: block;
