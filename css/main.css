@@ -801,6 +801,7 @@ header.landing-area .landing-info p {
    top: calc(55px / 2);
    transform: translateY(-50%);
    color: #777;
+   pointer-events: none;
 }
 .contact form :is(input, textarea):focus + label,
 .contact form :is(input, textarea):not(:placeholder-shown) + label {
