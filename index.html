@@ -9,6 +9,8 @@
       <!-- ================================== END META END
       ================================== -->
       <title>HTML5/CSS3/JS</title>
+      <!-- wow animation css file -->
+      <link rel="stylesheet" href="./css/animate.css" />
       <!-- font awsome 6 css file -->
       <link rel="stylesheet" href="./css/all.min.css" />
       <!-- custome normalize css file -->
@@ -90,7 +92,10 @@
       </div>
       <!-- nav bullets -->
       <div class="nav-bullets">
-         <a data-section=".landing-area" class="bullet active" href="#landingArea"
+         <a
+            data-section=".landing-area"
+            class="bullet active"
+            href="#landingArea"
             ><div class="tooltip">Home</div></a
          >
          <a data-section=".about-us" class="bullet" href="#about"
@@ -117,7 +122,8 @@
       </div>
       <!-- ================================== END OPTION
       ================================== -->
-      <header class="landing-area" id="landingAreaPage">
+      <header class="landing-area wow bounceInDown " id="landingAreaPage" data-wow-delay=".2s"
+      data-wow-duration="2s">
          <section id="landingArea">
             <div class="layer"></div>
             <div class="container">
@@ -204,7 +210,12 @@
          </section>
       </header>
       <main>
-         <section id="about" class="about-us">
+         <section
+            id="about"
+            class="about-us wow slideInLeft"
+            data-wow-offset="400"
+            data-wow-duration="2s"
+         >
             <div class="container">
                <div class="main-title">
                   <h2 data-title="A">About Us</h2>
@@ -233,7 +244,12 @@
          </section>
          <!-- ================================== END ABOUT US
       ================================== -->
-         <section id="skils" class="skils">
+         <section
+            id="skils"
+            class="skils wow slideInRight"
+            data-wow-offset="200"
+            data-wow-duration="2s"
+         >
             <div class="container">
                <div class="main-title">
                   <h2 data-title="O">Our Skils</h2>
@@ -314,7 +330,12 @@
          </section>
          <!-- ================================== END SKILS
       ================================== -->
-         <section id="our-gallary" class="our-gallary">
+         <section
+            id="our-gallary"
+            class="our-gallary wow bounceInDown"
+            data-wow-offset="400"
+            data-wow-duration="2s"
+         >
             <div class="container">
                <div class="main-title">
                   <h2 data-title="O">Our Gallary</h2>
@@ -340,7 +361,12 @@
          </section>
          <!-- ================================== END OUR GALLARY
       ================================== -->
-         <section id="time-line" class="timeline">
+         <section
+            id="time-line"
+            class="timeline wow bounceInUp"
+            data-wow-offset="400"
+            data-wow-duration="2s"
+         >
             <div class="main-title">
                <h2 data-title="T">Time Line</h2>
             </div>
@@ -411,7 +437,12 @@
          </section>
          <!-- ================================== END TIME LINE
       ================================== -->
-         <section id="our-Features" class="feture">
+         <section
+            id="our-Features"
+            class="feture wow bounceInLeft"
+            data-wow-offset="400"
+            data-wow-duration="2s"
+         >
             <div class="main-title">
                <h2 data-title="O">Our Features</h2>
             </div>
@@ -476,7 +507,8 @@
          </section>
          <!-- ================================== END FETURE
       ================================== -->
-         <section id="testimonail" class="testimonail">
+         <section id="testimonail" class="testimonail wow bounceInUp"  data-wow-offset="400"
+         data-wow-duration="2s">
             <div class="main-title">
                <h2 data-title="T">Testimonials</h2>
             </div>
@@ -583,7 +615,8 @@
          </section>
          <!-- ================================== END TESTIMONIAL
       ================================== -->
-         <section id="contact" class="contact">
+         <section id="contact" class="contact wow fadeInDownBig"  data-wow-offset="400"
+         data-wow-duration="2s">
             <div class="layer"></div>
             <div class="container">
                <div class="main-title">
@@ -661,6 +694,8 @@
             Rights Reserved.
          </h6>
       </footer>
+      <!-- wow js animation file -->
+      <script src="./js/wow.min.js"></script>
       <!-- custome js file -->
       <script type="module" src="./js/main.js"></script>
    </body>

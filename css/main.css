@@ -301,6 +301,9 @@ hr {
    border-color: transparent transparent transparent var(--main-color);
 }
 /* ============================== Landing ============================== */
+main {
+   overflow: hidden;
+}
 header.landing-area {
    background-image: url(../images/landing-1.jpg);
    background-size: cover;
@@ -308,6 +311,7 @@ header.landing-area {
    position: relative;
    color: #fff;
    z-index: 1000;
+   overflow: hidden;
 }
 .layer {
    position: absolute;

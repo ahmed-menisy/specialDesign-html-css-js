@@ -167,3 +167,5 @@ addEventListener("click", (e) => {
    ulLinks.classList.remove("show-nav");
    }
 });
+// --- wow anaimation
+new WOW().init();
