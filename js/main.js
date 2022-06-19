@@ -163,9 +163,19 @@ menuBtn.onclick = function () {
    ulLinks.classList.toggle("show-nav");
 };
 addEventListener("click", (e) => {
-   if(e.target.parentElement.parentElement != ulLinks && e.target != menuBtn ) {// to check if don't click in ul links or menu button
-   ulLinks.classList.remove("show-nav");
+   if (e.target.parentElement.parentElement != ulLinks && e.target != menuBtn) {
+      // to check if don't click in ul links or menu button
+      ulLinks.classList.remove("show-nav");
    }
 });
 // --- wow anaimation
 new WOW().init();
+// --- typed js
+var typed = new Typed(".typed", {
+   strings: ["Creative","Vibrant", "Dynamic", "Inventive", "passionate"],
+   typeSpeed: 130,
+   backDelay: 2000,
+   backSpeed: 60,
+   smartBackspace: true,
+   loop: true,
+});
