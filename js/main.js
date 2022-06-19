@@ -42,6 +42,7 @@ export function changeActive(items, elemnt) {
 let startCountSkil = (item) => {
    let prog = item.dataset.prog;
    let num = item.dataset.num;
+ setTimeout(()=>{
    let count = setInterval(() => {
       item.style.width = num++ + "%";
       item.dataset.num++;
@@ -49,6 +50,7 @@ let startCountSkil = (item) => {
          clearInterval(count);
       }
    }, 15);
+ },1500)
 };
 // --- show light box
 let showLightBox = (curentSrc) => {
