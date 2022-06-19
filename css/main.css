@@ -273,8 +273,7 @@ hr {
 .nav-bullets .bullet:is(:hover, .active) {
    transform: scale(1.5);
    background-color: var(--main-color);
-   outline: 1px solid #333;
-   outline-offset: 0;
+   outline: transparentلخف;
 }
 .nav-bullets .bullet:hover .tooltip {
    display: block;
