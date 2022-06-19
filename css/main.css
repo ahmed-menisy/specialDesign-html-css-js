@@ -89,9 +89,15 @@ img {
    text-transform: uppercase;
    color: var(--main-color);
    font-size: 2.5rem;
+   font-weight: 900;
    position: relative;
    margin-bottom: 6rem;
    z-index: 1;
+   -webkit-text-fill-color: transparent;
+   -webkit-text-stroke: 2px rgba(0, 0, 0, 0.4);
+   background: linear-gradient(to right, #111 50%, var(--main-color) 50%);
+   -webkit-background-clip: text;
+   background-clip: text;
 }
 .main-title + * {
    padding-top: 2rem;
@@ -390,6 +396,7 @@ header.landing-area .landing-info span {
 }
 header.landing-area .landing-info h1 {
    font-size: 3.5rem;
+   font-weight: 900;
    margin-bottom: 1rem;
 }
 header.landing-area .landing-info p {
@@ -496,6 +503,7 @@ header.landing-area .landing-info p {
 }
 .our-gallary .our-area div {
    padding: 3px;
+   overflow: hidden;
 }
 .our-gallary .our-area div img {
    padding: 4px;
@@ -504,6 +512,12 @@ header.landing-area .landing-info p {
    border-radius: 5px;
    aspect-ratio: 16/9;
    cursor: pointer;
+   filter: grayscale(1);
+   transition: var(--transition);
+}
+.our-gallary .our-area div img:hover {
+   filter: grayscale(0);
+   transform: scale(1.4) rotate(6deg);
 }
 .our-gallary .light-box {
    position: fixed;
@@ -681,14 +695,6 @@ header.landing-area .landing-info p {
 .testimonail {
    background-image: linear-gradient(to right, var(--main-color) 50%, #333 50%);
    filter: drop-shadow(0 2px 5px #000);
-}
-.testimonail h2 {
-   -webkit-text-fill-color: transparent;
-   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.4);
-   background: linear-gradient(to right, #111 51%, var(--main-color) 51%);
-   -webkit-background-clip: text;
-   background-clip: text;
-   color: var(--main-color);
 }
 .testimonail .testimonial-area {
    display: grid;
@@ -912,6 +918,9 @@ footer span {
 @media screen and (max-width: 576.98px) {
    * {
       text-align: center;
+   }
+   header.landing-area .landing-info h1 {
+      font-size: 1.5rem;
    }
    .timeline .timeline-content :is(.left, .right) {
       width: 100%;
