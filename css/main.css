@@ -95,7 +95,7 @@ img {
    z-index: 1;
    -webkit-text-fill-color: transparent;
    -webkit-text-stroke: 2px rgba(0, 0, 0, 0.4);
-   background: linear-gradient(to right, #111 50%, var(--main-color) 50%);
+   background: linear-gradient(to right, #222 50%, var(--main-color) 50%);
    -webkit-background-clip: text;
    background-clip: text;
 }
@@ -273,7 +273,7 @@ hr {
 .nav-bullets .bullet:is(:hover, .active) {
    transform: scale(1.5);
    background-color: var(--main-color);
-   outline: transparentلخف;
+   outline: transparent;
 }
 .nav-bullets .bullet:hover .tooltip {
    display: block;
