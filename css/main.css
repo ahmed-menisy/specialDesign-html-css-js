@@ -122,7 +122,7 @@ img {
   display: grid;
   place-content: center;
 color: var(--main-color);
-transition: var(--transition) 1.5s;
+transition: 1.5s linear 1s;
 }
 /* ============================== Setings ============================== */
 .settings-box {
