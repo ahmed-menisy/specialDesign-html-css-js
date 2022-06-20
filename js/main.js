@@ -15,6 +15,7 @@ const preve = document.querySelector(".our-gallary .light-box .preve"); //preve 
 const next = document.querySelector(".our-gallary .light-box .next"); //next box
 const navBullets = document.querySelectorAll(".nav-bullets .bullet");
 const menuBtn = document.getElementById("menuBtn");
+const loader = document.querySelector(".loader");
 // ============================= GLOBAL
 const imagesArray = [
    // images pathes
@@ -42,15 +43,15 @@ export function changeActive(items, elemnt) {
 let startCountSkil = (item) => {
    let prog = item.dataset.prog;
    let num = item.dataset.num;
- setTimeout(()=>{
-   let count = setInterval(() => {
-      item.style.width = num++ + "%";
-      item.dataset.num++;
-      if (num == prog) {
-         clearInterval(count);
-      }
-   }, 15);
- },1500)
+   setTimeout(() => {
+      let count = setInterval(() => {
+         item.style.width = num++ + "%";
+         item.dataset.num++;
+         if (num == prog) {
+            clearInterval(count);
+         }
+      }, 15);
+   }, 1500);
 };
 // --- show light box
 let showLightBox = (curentSrc) => {
@@ -174,10 +175,17 @@ addEventListener("click", (e) => {
 new WOW().init();
 // --- typed js
 var typed = new Typed(".typed", {
-   strings: ["Creative","Vibrant", "Dynamic", "Inventive", "passionate"],
+   strings: ["Creative", "Vibrant", "Dynamic", "Inventive", "passionate"],
    typeSpeed: 130,
    backDelay: 2000,
    backSpeed: 60,
    smartBackspace: true,
    loop: true,
+});
+// --- loader
+addEventListener("load", () => {
+   loader.style.opacity = `0`;
+   setTimeout(() => {
+      document.body.style.overflow = `visible`;
+   }, 1500);
 });

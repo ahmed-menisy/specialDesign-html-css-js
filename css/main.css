@@ -10,6 +10,7 @@
 body {
    font-family: "Open Sans", sans-serif;
    background-color: #fff;
+   overflow: hidden;
 }
 .container {
    width: var(--container-fluid);
@@ -112,7 +113,17 @@ img {
    transform: translate(-50%, -50%);
    color: rgba(0, 0, 0, 0.1);
 }
-/* ============================== fixed bar ============================== */
+/* ============================== loader ============================== */
+.loader {
+  position: absolute;
+  inset: 0;
+  z-index: 99999;
+  background-color: #f6f6f6;
+  display: grid;
+  place-content: center;
+color: var(--main-color);
+transition: var(--transition) 1.5s;
+}
 /* ============================== Setings ============================== */
 .settings-box {
    position: fixed;
