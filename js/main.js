@@ -187,5 +187,6 @@ addEventListener("load", () => {
    loader.style.opacity = `0`;
    setTimeout(() => {
       document.body.style.overflow = `visible`;
+      loader.style.display = `none`;
    }, 1500);
 });
